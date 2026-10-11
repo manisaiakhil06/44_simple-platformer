@@ -1,36 +1,116 @@
-# Real-Time Simple Platformer Game
+# Simple Platformer
 
-This project is a terminal-based platformer using **Pygame**. It introduces students to interactive game design using object-oriented principles and real-time graphical rendering.
+A 2D platformer game developed using **Python** and **Pygame** for the Software Engineering Lab.
 
----
-
-## What’s Provided
-
-A Python/Pygame platformer with:
-
-- A player-controlled character with left/right movement, gravity, and jumping
-- A small hand-built level of platforms with gaps and one hazard
-- Score display
-
-The implementation includes reliable landing detection, an in-game Game Over screen, replay with difficulty selection, and generated sound effects (no external audio assets are needed).
-
-### **Use an LLM (e.g. ChatGPT or Claude) as your debugging and pair-programming partner for this lab.**
+This project was enhanced as part of the **Vibe Coding Lab Assignment**, where the original game was improved by fixing gameplay issues and implementing additional features.
 
 ---
 
-## Getting Started
+## Features
 
-### Setup
+-  Smooth player movement and jumping
+-  Platform collision detection
+-  Hazard detection
+-  Goal system with score tracking
+-  Game Over screen
+-  Final score display
+-  Difficulty selection (Easy, Medium, Hard)
+-  Replay after Game Over
+-  Jump, Goal and Death sound effects
+-  Exit option from menu
+-  Improved platform collision to prevent falling through platforms
 
-1. Clone the repo or download the project folder.
-2. Make sure you have Python 3.10+ installed.
-3. Install dependencies:
+---
+
+#  Improvements Implemented
+
+### Platform Collision Fix
+- Fixed collision detection when falling at high speed.
+- Prevents the player from passing through platforms.
+
+### Start Menu
+Before the game begins, the player can select:
+
+- Easy
+- Medium
+- Hard
+
+The selected difficulty changes gravity and jump strength.
+
+---
+
+### Game Over Screen
+
+The game now displays a Game Over screen when:
+
+- Player touches a hazard
+- Player falls off the level
+
+The screen shows:
+
+- Final Score
+- Selected Difficulty
+- Replay Instructions
+- Exit Option
+
+---
+
+### Replay System
+
+After Game Over:
+
+- Press **Enter** or **Space**
+- Game restarts
+- Score resets
+- Player respawns
+- Difficulty remains selected
+
+---
+
+### Sound Effects
+
+The game generates sound effects programmatically.
+
+Events with sound:
+
+- Jump
+- Goal reached
+- Death
+
+No external audio files are required.
+
+---
+
+#  Controls
+
+| Action | Keys |
+|---------|------|
+| Move Left | A / Left Arrow |
+| Move Right | D / Right Arrow |
+| Jump | Space / W / Up Arrow |
+| Select Easy | 1 |
+| Select Medium | 2 |
+| Select Hard | 3 |
+| Start Game | Enter / Space |
+| Replay | Enter / Space |
+| Exit | Esc |
+
+---
+
+#  Requirements
+
+- Python 3.x
+- Pygame
+
+Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-4. Run the game:
+---
+
+#  Run the Game
 
 ```bash
 python main.py
@@ -38,73 +118,73 @@ python main.py
 
 ---
 
-
-## Tasks to Complete
-
-Each task should be reviewed and tested iteratively. Review the changes and run the game locally before submission.
-
-### Task 1: Refine Collision Detection
-
-> The player sometimes falls straight through a platform instead of landing on it, especially after a long fall. Investigate and enhance collision accuracy so landings register reliably regardless of fall speed.
-
-
-### Task 2: Implement Game Over Condition
-
-> Add a screen that displays the final score once the player falls off the bottom of the screen or touches a hazard, then gracefully waits for input instead of just printing to the console.
-
-
-### Task 3: Add Replay Option
-
-> After Game Over, allow the user to play again by choosing a difficulty (Easy, Medium, or Hard gravity/jump strength), or exit.
-
-
-### Task 4: Add Sound Feedback
-
-> Add basic sound effects for jumping, reaching the goal, and dying.
-
-
----
-
-### Controls after implementation
-
-- Move: `Left` / `Right` or `A` / `D`
-- Jump: `Space` / `Up` / `W`
-- On the start screen or Game Over: press `1` for Easy, `2` for Medium, or `3` for Hard
-- Press `Enter` or `Space` to start or replay using the selected difficulty
-- Press `Esc` to exit
-
-Sound effects are synthesized at runtime. If the system does not support audio, gameplay continues silently.
-
-## Expected Behavior
-
-- Smooth left/right movement using `Left`/`Right` or `A`/`D`, and jumping with `Space`/`Up`/`W`
-- Gravity pulls the player down and platforms stop the fall when landed on from above
-- Touching the hazard or falling off the bottom of the screen ends the game
-- Reaching the goal at the right edge increases the score and sends the player back to the start
-- Score is visible on screen at all times
-
----
-
-## Folder Structure
+#  Project Structure
 
 ```
-simple-platformer-main/
+44_simple-platformer-main/
+│
 ├── main.py
 ├── requirements.txt
-├── game/
-│   ├── game_engine.py
-│   ├── player.py
-│   ├── platform.py
-│   └── hazard.py
-└── README.md
+├── README.md
+│
+└── game/
+    ├── __init__.py
+    ├── game_engine.py
+    ├── player.py
+    ├── platform.py
+    └── hazard.py
 ```
 
 ---
 
-## Submission Checklist
+#  Testing Checklist
 
-Submission is only the following three things:
+✔ Game launches successfully
 
-- [] A 10-second video of gameplay **before** your changes, showing the bug/broken behavior
-- [] A 10-second video of gameplay **after** your changes, showing the bug fixed and the new features working
-- [] The Chat/LLM used page link, with the complete chat history
+✔ Player movement works
+
+✔ Jump works correctly
+
+✔ Platform collision fixed
+
+✔ Hazard collision detected
+
+✔ Game Over screen appears
+
+✔ Final score displayed
+
+✔ Replay works correctly
+
+✔ Difficulty selection works
+
+✔ Goal increments score
+
+✔ Sound effects play for Jump, Goal and Death
+
+✔ Exit option works
+
+---
+
+#  Technologies Used
+
+- Python
+- Pygame
+
+---
+
+#  Assignment Objectives Completed
+
+- Fixed platform collision bug
+- Added Game Over screen
+- Displayed final score
+- Added replay functionality
+- Added Easy, Medium and Hard difficulty levels
+- Added jump, goal and death sound effects
+- Improved gameplay experience
+- Preserved original game functionality
+
+---
+
+# 📜 License
+
+This project was developed for academic purposes as part of the Software Engineering Lab.
