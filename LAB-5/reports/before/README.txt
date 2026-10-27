@@ -1,0 +1,1 @@
+Baseline findings reviewed from the original repository source displayed on GitHub. Genuine Pylint/Bandit/Flake8 output is not included because the tools were unavailable in the execution environment. Run run_analysis.sh with employee_payroll_system_original.py present to generate actual reports.
